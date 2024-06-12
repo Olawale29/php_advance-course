@@ -29,15 +29,19 @@
     $bananna->set_color("green");
 
     
-    
-    echo $bananna->get_name();
+    //result
+    // echo $bananna->get_name();
+    echo $bananna->name;
     echo "<br/>";
-    echo $apple->get_name();
+    // echo $apple->get_name();
+    echo $apple->name;
     echo "<br/>";
     echo "<br/>";
-    echo $bananna->get_color();
+    // echo $bananna->get_color();
+    echo $bananna->color;
     echo "<br/>";
-    echo $apple->get_color();
+    // echo $apple->get_color();
+    echo $apple->color;
     
     
 ?>
