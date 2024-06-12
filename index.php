@@ -9,41 +9,28 @@
             $this->color = $color;
             
         }
-     
-        //get method
-        public function get_name(){
-            return $this->name;
+        public function intro(){
+            echo "This fruit is {$this->name} and the color is {$this->color}";
+            echo "<br/>";
         }
-        public function get_color(){
-            return $this->color;
-        }
-        public function __destruct()
-        {
-            echo "The fruit is {$this->name} and the color is {$this->color}";
-            echo"<br/>";
-        }
+        
+
     }
 
-    $apple = new Fruits("apple 2", "green");
- 
+    class Strawberry extends Fruits{
+        public function message(){
+            echo "Am I a fruit or berry";
+        }
+        public function addition($num1, $num2){
+            echo $num1 + $num2;
+        }
+        
+    }
+    $strawberry = new Strawberry("strawberry", "red");
+    // $strawberry->addition(5,10);
+    echo $strawberry->name;
+    echo $strawberry->color;
 
-    $bananna = new Fruits("banana", "blue");
-
-
-    
-    //result
-    // echo $bananna->get_name();
-    // echo $bananna->name;
-    // echo "<br/>";
-    // echo $apple->get_name();
-    // echo $apple->name;
-    // echo "<br/>";
-    // echo "<br/>";
-    // echo $bananna->get_color();
-    // echo $bananna->color;
-    // echo "<br/>";
-    // echo $apple->get_color();
-    // echo $apple->color;
     
     
 ?>
