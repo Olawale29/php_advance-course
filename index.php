@@ -1,54 +1,80 @@
 <?php 
-    interface Animal{
-        public function makeSound();
-        public function eat():string;
-        // public function dog():string;
-    }
-    class Cat implements Animal{
-        public function makeSound(){
-            echo "Meow";
+    trait message1{
+        public function msg1(){
+            echo "OOP is fun";
         }
-        public function eat():string{
-            return "Cat is eating";
+        public function addNumber($num1, $num2){
+            return $num1 + $num2;
         }
     }
-    class Dog implements Animal{
-        public function makeSound(){
-            echo "woof";
-        }
-        public function eat():string{
-            return "Dog is eating";
+    trait message2{
+        public function msg2(){
+            echo "OOP reduced code duplication";
         }
     }
 
-    class Mouse implements Animal{
-        public function makeSound(){
-            echo "squek";
-        }
-        public function eat():string{
-            return "mouse is eating";
-        }
+    class Welcome{
+        use message1, message2;
     }
-    $cat = new Cat();
-    // $cat->makeSound();
-    // echo "<br>";
-    // echo $cat->eat();
-    // echo "<br>";
+
+    $obj = new Welcome();
+    $obj->msg1();
+    echo "<br/>";
+    echo $obj->addNumber(5,7);
+    echo "<br/>";
+    $obj->msg2();
+
+
+    // interface Animal{
+    //     public function makeSound();
+    //     public function eat():string;
+    //     // public function dog():string;
+    // }
+    // class Cat implements Animal{
+    //     public function makeSound(){
+    //         echo "Meow";
+    //     }
+    //     public function eat():string{
+    //         return "Cat is eating";
+    //     }
+    // }
+    // class Dog implements Animal{
+    //     public function makeSound(){
+    //         echo "woof";
+    //     }
+    //     public function eat():string{
+    //         return "Dog is eating";
+    //     }
+    // }
+
+    // class Mouse implements Animal{
+    //     public function makeSound(){
+    //         echo "squek";
+    //     }
+    //     public function eat():string{
+    //         return "mouse is eating";
+    //     }
+    // }
+    // $cat = new Cat();
+    // // $cat->makeSound();
+    // // echo "<br>";
+    // // echo $cat->eat();
+    // // echo "<br>";
     
-    $dog = new Dog();
-    // echo $dog->makeSound();
-    // echo "<br>";
-    // echo $dog->eat();
+    // $dog = new Dog();
+    // // echo $dog->makeSound();
+    // // echo "<br>";
+    // // echo $dog->eat();
 
-    $mouse = new Mouse();
+    // $mouse = new Mouse();
 
-    $animals = array($cat, $dog, $mouse);
-    foreach($animals as $animal){
-        $animal->makeSound();
-        echo "<br>";
-        echo $animal->eat();
-        echo "<br>";
-    }
+    // $animals = array($cat, $dog, $mouse);
+    // foreach($animals as $animal){
+    //     $animal->makeSound();
+    //     echo "<br>";
+    //     echo $animal->eat();
+    //     echo "<br>";
+    // }
 
 
 
