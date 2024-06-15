@@ -1,57 +1,112 @@
 <?php 
-
-    abstract class Car{
-        public $name;
-        public $number;
-        public function __construct($name, $number){
-            $this->name = $name;
-            $this->number  = $number;
-
-        }
-        abstract public function intro() : string;
-        abstract public function int() : int;
-
+    interface Animal{
+        public function makeSound();
+        public function eat():string;
+        // public function dog():string;
     }
-    class Audi extends Car{
-        public function intro():string{
-            return "Choose German quality! I am a $this->name ";
+    class Cat implements Animal{
+        public function makeSound(){
+            echo "Meow";
         }
-        public function int():int{
-            return $this->number;
+        public function eat():string{
+            return "Cat is eating";
         }
     }
-    class Volvo extends Car{
-        public function intro():string{
-            return "Proud to be swidish! I am a $this->name ";
+    class Dog implements Animal{
+        public function makeSound(){
+            echo "woof";
         }
-        public function int():int{
-            return $this->number;
-        }
-    }
-    class Citroen extends Car{
-        public function intro():string{
-            return "French extravagence ! I am a $this->name";
-        }
-        public function int():int{
-            return $this->number;
+        public function eat():string{
+            return "Dog is eating";
         }
     }
 
-    $audi = new Audi("Audi", 50);
-    $volvo = new Volvo("volvo", 2);
-    $citroen = new Citroen("citroen", 45);
+    class Mouse implements Animal{
+        public function makeSound(){
+            echo "squek";
+        }
+        public function eat():string{
+            return "mouse is eating";
+        }
+    }
+    $cat = new Cat();
+    // $cat->makeSound();
+    // echo "<br>";
+    // echo $cat->eat();
+    // echo "<br>";
+    
+    $dog = new Dog();
+    // echo $dog->makeSound();
+    // echo "<br>";
+    // echo $dog->eat();
 
-    echo $audi->intro();
-    echo "<br>";
-    echo $volvo->intro();
-    echo "<br>";
-    echo $citroen->intro();
+    $mouse = new Mouse();
 
-    echo $audi->int();
-    echo "<br>";
-    echo $volvo->int();
-    echo "<br>";
-    echo $citroen->int();
+    $animals = array($cat, $dog, $mouse);
+    foreach($animals as $animal){
+        $animal->makeSound();
+        echo "<br>";
+        echo $animal->eat();
+        echo "<br>";
+    }
+
+
+
+    
+
+
+    // abstract class Car{
+    //     public $name;
+    //     public $number;
+    //     public function __construct($name, $number){
+    //         $this->name = $name;
+    //         $this->number  = $number;
+
+    //     }
+    //     abstract public function intro() : string;
+    //     abstract public function int() : int;
+
+    // }
+    // class Audi extends Car{
+    //     public function intro():string{
+    //         return "Choose German quality! I am a $this->name ";
+    //     }
+    //     public function int():int{
+    //         return $this->number;
+    //     }
+    // }
+    // class Volvo extends Car{
+    //     public function intro():string{
+    //         return "Proud to be swidish! I am a $this->name ";
+    //     }
+    //     public function int():int{
+    //         return $this->number;
+    //     }
+    // }
+    // class Citroen extends Car{
+    //     public function intro():string{
+    //         return "French extravagence ! I am a $this->name";
+    //     }
+    //     public function int():int{
+    //         return $this->number;
+    //     }
+    // }
+
+    // $audi = new Audi("Audi", 50);
+    // $volvo = new Volvo("volvo", 2);
+    // $citroen = new Citroen("citroen", 45);
+
+    // echo $audi->intro();
+    // echo "<br>";
+    // echo $volvo->intro();
+    // echo "<br>";
+    // echo $citroen->intro();
+
+    // echo $audi->int();
+    // echo "<br>";
+    // echo $volvo->int();
+    // echo "<br>";
+    // echo $citroen->int();
 
     
 
