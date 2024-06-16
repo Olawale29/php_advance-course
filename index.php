@@ -1,28 +1,52 @@
 <?php 
-    trait message1{
-        public function msg1(){
-            echo "OOP is fun";
+
+    class Greeting{
+
+        // public function __construct($num1, $num2){
+        //     echo self::addNumber($num1, $num2);
+        // }
+        public static function welcome($msg){
+            echo $msg;
         }
-        public function addNumber($num1, $num2){
+
+        public static function addNumber($num1, $num2){
             return $num1 + $num2;
         }
     }
-    trait message2{
-        public function msg2(){
-            echo "OOP reduced code duplication";
+    class NewArea extends Greeting{
+        public static function newdata($msg){
+            parent::welcome($msg);
         }
     }
+    NewArea::newdata("Hello world, I am from new area");
+    // Greeting::welcome();
+    // echo "<br>";
+    // echo Greeting::addNumber(5,6)
 
-    class Welcome{
-        use message1, message2;
-    }
+    // trait message1{
+    //     public function msg1(){
+    //         echo "OOP is fun";
+    //     }
+    //     public function addNumber($num1, $num2){
+    //         return $num1 + $num2;
+    //     }
+    // }
+    // trait message2{
+    //     public function msg2(){
+    //         echo "OOP reduced code duplication";
+    //     }
+    // }
 
-    $obj = new Welcome();
-    $obj->msg1();
-    echo "<br/>";
-    echo $obj->addNumber(5,7);
-    echo "<br/>";
-    $obj->msg2();
+    // class Welcome{
+    //     use message1, message2;
+    // }
+
+    // $obj = new Welcome();
+    // $obj->msg1();
+    // echo "<br/>";
+    // echo $obj->addNumber(5,7);
+    // echo "<br/>";
+    // $obj->msg2();
 
 
     // interface Animal{
