@@ -1,15 +1,50 @@
 <?php 
+    require 'classes/table.php';
+    require 'classes/table2.php';
 
-    class Pi{
-        public static $value = 3.14159;
+    use Html\Table as HtmlTable;
+    use Others\Table as OtherTable;
+    
+    $table = new HtmlTable();
+    $table->title = 'table';
+    $table->numRows = 9;
 
-        public function staticValue(){
-            return self::$value;
-        }
-    }
+    $table2 = new OtherTable();
+    $table2->title2 = 'Wells';
+    $table2->numRows2 = 10;
 
-    $pi = new Pi();
-    echo $pi->staticValue();
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <?php 
+        $table->message(); 
+        echo "<br>";
+        $table2->message(); 
+        ?>
+    </body>
+    </html>
+
+
+
+    <?php
+
+    // class Pi{
+    //     public static $value = 3.14159;
+
+    //     public function staticValue(){
+    //         return self::$value;
+    //     }
+    // }
+
+    // $pi = new Pi();
+    // echo $pi->staticValue();
 
     // class Greeting{
 
