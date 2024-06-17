@@ -1,24 +1,35 @@
 <?php 
 
-    class Greeting{
+    class Pi{
+        public static $value = 3.14159;
 
-        // public function __construct($num1, $num2){
-        //     echo self::addNumber($num1, $num2);
-        // }
-        public static function welcome($msg){
-            echo $msg;
-        }
-
-        public static function addNumber($num1, $num2){
-            return $num1 + $num2;
+        public function staticValue(){
+            return self::$value;
         }
     }
-    class NewArea extends Greeting{
-        public static function newdata($msg){
-            parent::welcome($msg);
-        }
-    }
-    NewArea::newdata("Hello world, I am from new area");
+
+    $pi = new Pi();
+    echo $pi->staticValue();
+
+    // class Greeting{
+
+    //     // public function __construct($num1, $num2){
+    //     //     echo self::addNumber($num1, $num2);
+    //     // }
+    //     public static function welcome($msg){
+    //         echo $msg;
+    //     }
+
+    //     public static function addNumber($num1, $num2){
+    //         return $num1 + $num2;
+    //     }
+    // }
+    // class NewArea extends Greeting{
+    //     public static function newdata($msg){
+    //         parent::welcome($msg);
+    //     }
+    // }
+    // NewArea::newdata("Hello world, I am from new area");
     // Greeting::welcome();
     // echo "<br>";
     // echo Greeting::addNumber(5,6)
